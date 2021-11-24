@@ -24,3 +24,6 @@ data['Ubicación del caso'].replace('Casa', 'casa', inplace=True)
 data['Ubicación del caso'].replace('CASA', 'casa', inplace=True)
 
 len(data[data['Ubicación del caso'] == 'casa'])
+
+# 5.Número de personas que se encuentran recuperados
+len(data[data['Recuperado'] == 'Recuperado'])
