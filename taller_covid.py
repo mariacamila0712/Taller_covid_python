@@ -13,21 +13,28 @@ data = pd.read_csv(url)
 # 1.Número de casos de Contagiados en el País.
 print(data['ID de caso'].count())
 
+print('-----------------------------------------------------------------')
+
 # 2. Número de Municipios Afectados.
-data['Nombre municipio'].unique().size
+print(data['Nombre municipio'].unique().size)
+print('-----------------------------------------------------------------')
 
 # 3.Liste los municipios afectados (sin repetirlos)
 print(data['Nombre municipio'].unique())
+print('-----------------------------------------------------------------')
 
 # 4.Número de personas que se encuentran en atención en casa
 data['Ubicación del caso'].replace('Casa', 'casa', inplace=True)
 data['Ubicación del caso'].replace('CASA', 'casa', inplace=True)
 
-len(data[data['Ubicación del caso'] == 'casa'])
+print(len(data[data['Ubicación del caso'] == 'casa']))
+print('-----------------------------------------------------------------')
 
 # 5.Número de personas que se encuentran recuperados
-len(data[data['Recuperado'] == 'Recuperado'])
+print(len(data[data['Recuperado'] == 'Recuperado']))
+print('-----------------------------------------------------------------')
 
 # 6.Número de personas que ha fallecido
 data['Recuperado'].replace('Fallecido', 'fallecido', inplace=True)
-len(data[data['Recuperado'] == 'fallecido'])
+print(len(data[data['Recuperado'] == 'fallecido']))
+print('-----------------------------------------------------------------')
