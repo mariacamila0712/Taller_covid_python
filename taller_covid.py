@@ -56,4 +56,7 @@ num_dep_afectados = data['Nombre departamento'].unique().size
 print(f'El número de departamentos afectados es: {num_dep_afectados}')
 print('-----------------------------------------------------------------')
 
-#
+#9.Liste los departamentos afectados(sin repetirlos)
+lista_dep_afectados = data['Nombre departamento'].unique()
+print(f'Lista de departamentos afectados es: {lista_dep_afectados}')
+print('-----------------------------------------------------------------')
