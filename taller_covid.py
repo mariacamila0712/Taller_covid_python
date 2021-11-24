@@ -27,3 +27,7 @@ len(data[data['Ubicación del caso'] == 'casa'])
 
 # 5.Número de personas que se encuentran recuperados
 len(data[data['Recuperado'] == 'Recuperado'])
+
+# 6.Número de personas que ha fallecido
+data['Recuperado'].replace('Fallecido', 'fallecido', inplace=True)
+len(data[data['Recuperado'] == 'fallecido'])
