@@ -18,3 +18,9 @@ data['Nombre municipio'].unique().size
 
 # 3.Liste los municipios afectados (sin repetirlos)
 print(data['Nombre municipio'].unique())
+
+# 4.Número de personas que se encuentran en atención en casa
+data['Ubicación del caso'].replace('Casa', 'casa', inplace=True)
+data['Ubicación del caso'].replace('CASA', 'casa', inplace=True)
+
+len(data[data['Ubicación del caso'] == 'casa'])
