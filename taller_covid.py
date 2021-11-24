@@ -47,3 +47,13 @@ print('-----------------------------------------------------------------')
 tipo_caso = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
 print(f'Orden de mayor a menor por tipo de caso: {tipo_caso} ')
 print('-----------------------------------------------------------------')
+
+# 8.Número de departamentos afectados
+data['Nombre departamento'].replace('Caldas', 'CALDAS', inplace=True)
+data['Nombre departamento'].replace('caldas', 'CALDAS', inplace=True)
+data['Nombre departamento'].replace('Tolima', 'TOLIMA', inplace=True)
+num_dep_afectados = data['Nombre departamento'].unique().size
+print(f'El número de departamentos afectados es: {num_dep_afectados}')
+print('-----------------------------------------------------------------')
+
+#
