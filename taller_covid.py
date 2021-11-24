@@ -60,3 +60,8 @@ print('-----------------------------------------------------------------')
 lista_dep_afectados = data['Nombre departamento'].unique()
 print(f'Lista de departamentos afectados es: {lista_dep_afectados}')
 print('-----------------------------------------------------------------')
+
+# 10.Ordene de mayor a menor por tipo de atención
+tipo_atencion = data.groupby('Ubicación del caso').size().sort_values(ascending=False)
+print(f'Orden de mayor a menor por tipo de atención es: {tipo_atencion}')
+print('-----------------------------------------------------------------')
