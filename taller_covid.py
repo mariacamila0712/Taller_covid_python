@@ -16,4 +16,5 @@ print(data['ID de caso'].count())
 # 2. Número de Municipios Afectados.
 data['Nombre municipio'].unique().size
 
-
+# 3.Liste los municipios afectados (sin repetirlos)
+print(data['Nombre municipio'].unique())
