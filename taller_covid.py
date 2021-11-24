@@ -10,5 +10,10 @@ import pandas as pd
 url = 'covid_22_noviembre.csv'
 data = pd.read_csv(url)
 
-# Número de casos de Contagiados en el País.
+# 1.Número de casos de Contagiados en el País.
 print(data['ID de caso'].count())
+
+# 2. Número de Municipios Afectados.
+data['Nombre municipio'].unique().size
+
+
