@@ -6,6 +6,9 @@ Created on Wed Nov 24 15:14:56 2021
 """
 
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 url = 'covid_22_noviembre.csv'
 data = pd.read_csv(url)
@@ -127,4 +130,9 @@ print('-----------------------------------------------------------------')
 # 19. Liste el promedio de edad de contagiados por hombre y mujeres por ciudad por departamento
 prom_edad_hom_muj = data.groupby(['Nombre departamento','Nombre municipio', 'Sexo']).Edad.mean()
 print(f'EL promedio de edad de contagiados por hombre y mujeres por ciudad por departamentos es : {prom_edad_hom_muj}')
+print('-----------------------------------------------------------------')
+
+# 20.Liste de mayor a menor el número de contagiados por país de procedencia
+conta_pais_procedencia = data.groupby('Nombre del país').size().sort_values(ascending=False)
+print(f'Lista de mayor a menor contagiados por pais de procedencia: {conta_pais_procedencia}')
 print('-----------------------------------------------------------------')
