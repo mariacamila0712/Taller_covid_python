@@ -136,3 +136,8 @@ print('-----------------------------------------------------------------')
 conta_pais_procedencia = data.groupby('Nombre del país').size().sort_values(ascending=False)
 print(f'Lista de mayor a menor contagiados por pais de procedencia: {conta_pais_procedencia}')
 print('-----------------------------------------------------------------')
+
+# 21. Liste de mayor a menor las fechas donde se presentaron mas contagios
+fecha_mas_contagiados = data.groupby('Fecha de diagnóstico').size().sort_values(ascending=False)
+print(f'Fecha de mayor a menor donde se presentaron mas contagiados : {fecha_mas_contagiados}')
+print('-----------------------------------------------------------------')
