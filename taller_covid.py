@@ -70,3 +70,8 @@ print('-----------------------------------------------------------------')
 dep_mas_contagiados = data.groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
 print(f'Los 10 departamentos son mas casos de contagiados son: {dep_mas_contagiados}')
 print('-----------------------------------------------------------------')
+
+# 12.Liste de mayor a menor los 10 departamentos con mas casos de fallecidos
+dep_mas_fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
+print(f'Los 10 departamentos son mas casos de fallecidos son: {dep_mas_fallecidos}')
+print('-----------------------------------------------------------------')
