@@ -141,3 +141,11 @@ print('-----------------------------------------------------------------')
 fecha_mas_contagiados = data.groupby('Fecha de diagnóstico').size().sort_values(ascending=False)
 print(f'Fecha de mayor a menor donde se presentaron mas contagiados : {fecha_mas_contagiados}')
 print('-----------------------------------------------------------------')
+
+# 22. Diga cual es la tasa de mortalidad y recuperación que tiene toda Colombia
+tasa_mortalidad = ((len(data[data['Recuperado'] == 'fallecido'])) * 100) / (len(data))
+print(f'La tasa de mortalidad en toda Colombia es: {tasa_mortalidad}')
+print('-----------------------------------------------------------------')
+tasa_recuperacion = ((len(data[data['Recuperado'] == 'Recuperado'])) * 100) / (len(data))
+print(f'La tasa de recuperación en toda Colombia es: {tasa_recuperacion}')
+print('-----------------------------------------------------------------')
