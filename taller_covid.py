@@ -162,7 +162,13 @@ print('-----------------------------------------------------------------')
 # 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
 
 
-# 25.  Liste por cada ciudad la cantidad de personas por atención
+# 25. Liste por cada ciudad la cantidad de personas por atención
 ciudad_atencion = data.groupby(['Nombre municipio', 'Recuperado']).size().sort_values()
 print(f'Lista de ciudades por la cantidad de atención: {ciudad_atencion}')
+print('-----------------------------------------------------------------')
+
+# 26. Liste el promedio de edad por sexo por cada ciudad de contagiados
+data['Nombre municipio'].replace('puerto colombia', 'PUERTO COLOMBIA', inplace=True)
+prom_edad_sexo_ciudad = data.groupby(['Nombre municipio','Sexo']).Edad.mean()
+print(f'Lista de promedios de edad por sexo por cada ciudad de contagiados: {prom_edad_sexo_ciudad}')
 print('-----------------------------------------------------------------')
