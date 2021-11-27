@@ -85,7 +85,7 @@ print(
     f'Los 10 departamentos con mas casos de fallecidos son: {dep_mas_fallecidos}')
 print('-----------------------------------------------------------------')
 
-# 13.Liste de mayor a menor los 10 departamentos con mas casos de
+# 13.Liste de mayor a menor los 10 departamentos con mas casos recuperados
 dep_mas_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby(
     'Nombre departamento').size().sort_values(ascending=False).head(10)
 print(
@@ -148,4 +148,21 @@ print(f'La tasa de mortalidad en toda Colombia es: {tasa_mortalidad}')
 print('-----------------------------------------------------------------')
 tasa_recuperacion = ((len(data[data['Recuperado'] == 'Recuperado'])) * 100) / (len(data))
 print(f'La tasa de recuperación en toda Colombia es: {tasa_recuperacion}')
+print('-----------------------------------------------------------------')
+
+# 23.Liste la tasa de mortalidad y recuperación que tiene cada departamento
+mortalidad_dep = ((data[data['Recuperado'] == 'fallecido'].groupby(
+    'Nombre departamento').size() / data['ID de caso'].max())*100)
+print(f'La tasa de mortalidad por departamentos es: {mortalidad_dep}')
+print('-----------------------------------------------------------------')
+recuperacion_dep = (data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size() / data['ID de caso'].max())*100
+print(f'La tasa de recuperación por departamentos es: {recuperacion_dep}')
+print('-----------------------------------------------------------------')
+
+# 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
+
+
+# 25.  Liste por cada ciudad la cantidad de personas por atención
+ciudad_atencion = data.groupby(['Nombre municipio', 'Recuperado']).size().sort_values()
+print(f'Lista de ciudades por la cantidad de atención: {ciudad_atencion}')
 print('-----------------------------------------------------------------')
