@@ -259,3 +259,19 @@ barra_tipo_recuperacion = data.groupby('Tipo de recuperación').size().sort_valu
 print(f'El gráfico de barras por tipo de recuperación en toda Colombia es: ')
 plt.show(barra_tipo_recuperacion)
 print('-----------------------------------------------------------------')
+
+# 35. Haga un gráfico de barras del número de contagiados, recuperados y fallecidos por fecha de toda Colombia
+barra_contagios_fecha = data.groupby('Fecha de diagnóstico').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras del numéro de contagios por fecha en toda Colombia es: ')
+plt.show(barra_contagios_fecha)
+print('-----------------------------------------------------------------')
+
+barra_fallecidos_fecha = data[data['Recuperado'] == 'fallecido'].groupby('Fecha de diagnóstico').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras del numéro de fallecidos por fecha en toda Colombia es: ')
+plt.show(barra_fallecidos_fecha)
+print('-----------------------------------------------------------------')
+
+barra_recuperados_fecha = data[data['Recuperado'] == 'Recuperado'].groupby('Fecha de diagnóstico').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras del numéro de recuperados por fecha en toda Colombia es: ')
+plt.show(barra_recuperados_fecha)
+print('-----------------------------------------------------------------')
