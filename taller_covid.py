@@ -241,3 +241,8 @@ print('-----------------------------------------------------------------')
 barra_atencion = data.groupby('Recuperado').size().sort_values().plot(kind = 'bar')
 print(f'El gráfico de barras por atención en toda Colombia es: ')
 plt.show(barra_atencion)
+
+# 33. Haga un gráfico de barras por Sexo de toda Colombia
+barra_sexo = data.groupby('Sexo').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras por sexo en toda Colombia es: ')
+plt.show(barra_sexo)
