@@ -151,12 +151,8 @@ print(f'La tasa de recuperación en toda Colombia es: {tasa_recuperacion}')
 print('-----------------------------------------------------------------')
 
 # 23.Liste la tasa de mortalidad y recuperación que tiene cada departamento
-mortalidad_dep = ((data[data['Recuperado'] == 'fallecido'].groupby(
-    'Nombre departamento').size() / data['ID de caso'].max())*100)
-print(f'La tasa de mortalidad por departamentos es: {mortalidad_dep}')
-print('-----------------------------------------------------------------')
-recuperacion_dep = (data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size() / data['ID de caso'].max())*100
-print(f'La tasa de recuperación por departamentos es: {recuperacion_dep}')
+tasa_mortalidad_dep = (data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size() / len(data)) * 100
+print(f'La lista de mortalidad por tasa de mortalidad en por es: {tasa_mortalidad_dep}')
 print('-----------------------------------------------------------------')
 
 # 24. Liste la tasa de mortalidad y recuperación que tiene cada ciudad
@@ -172,3 +168,6 @@ data['Nombre municipio'].replace('puerto colombia', 'PUERTO COLOMBIA', inplace=T
 prom_edad_sexo_ciudad = data.groupby(['Nombre municipio','Sexo']).Edad.mean()
 print(f'Lista de promedios de edad por sexo por cada ciudad de contagiados: {prom_edad_sexo_ciudad}')
 print('-----------------------------------------------------------------')
+
+
+
