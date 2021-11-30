@@ -237,4 +237,7 @@ porcentaje_atencion = ((data.groupby('Ubicación del caso').size().sort_values(a
 print(f'La lista de porcentajes por atencion en toda Colombia es: {porcentaje_atencion} ')
 print('-----------------------------------------------------------------')
 
-# 32.  Haga un gráfico de barras por atención de toda Colombia
+# 32. Haga un gráfico de barras por atención de toda Colombia
+barra_atencion = data.groupby('Recuperado').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras por atención en toda Colombia es: ')
+plt.show(barra_atencion)
