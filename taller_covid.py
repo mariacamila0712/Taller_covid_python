@@ -241,8 +241,21 @@ print('-----------------------------------------------------------------')
 barra_atencion = data.groupby('Recuperado').size().sort_values().plot(kind = 'bar')
 print(f'El gráfico de barras por atención en toda Colombia es: ')
 plt.show(barra_atencion)
+print('-----------------------------------------------------------------')
 
 # 33. Haga un gráfico de barras por Sexo de toda Colombia
 barra_sexo = data.groupby('Sexo').size().sort_values().plot(kind = 'bar')
 print(f'El gráfico de barras por sexo en toda Colombia es: ')
 plt.show(barra_sexo)
+print('-----------------------------------------------------------------')
+
+# 34. Haga un gráfico de barras por tipo de toda Colombia
+barra_tipo_contagio = data.groupby('Tipo de contagio').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras por tipo de contagio en toda Colombia es: ')
+plt.show(barra_tipo_contagio)
+print('-----------------------------------------------------------------')
+
+barra_tipo_recuperacion = data.groupby('Tipo de recuperación').size().sort_values().plot(kind = 'bar')
+print(f'El gráfico de barras por tipo de recuperación en toda Colombia es: ')
+plt.show(barra_tipo_recuperacion)
+print('-----------------------------------------------------------------')
