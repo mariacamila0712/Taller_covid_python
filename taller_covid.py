@@ -192,7 +192,7 @@ curva_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby('Fecha de d
 print('La curva de recuperados es: ')
 plt.show(curva_recuperados)
 
-# 28.  Grafique las curvas de contagio, muerte y recuperación de los 10 departamentos con mas casos de contagiados acumulados
+# 28. Grafique las curvas de contagio, muerte y recuperación de los 10 departamentos con mas casos de contagiados acumulados
 contagios_10_dep = data.groupby('Nombre departamento').size().sort_values(ascending = False).head(10).plot()
 print('La curva de contagio en los 10 departamentos con mas casos es: ')
 plt.show(contagios_10_dep)
@@ -204,3 +204,16 @@ plt.show(fallecidos_10_dep)
 recuperados_10_dep = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size().sort_values(ascending = False).head(10).plot()
 print('La curva de recuperados en los 10 departamentos con mas casos es: ')
 plt.show(recuperados_10_dep)
+
+# 29. Grafique las curvas de contagio, muerte y recuperación de las 10 ciudades con mas casos de contagiados acumulados
+contagiados_10_ciu = data.groupby('Ubicación del caso').size().sort_values(ascending = False).head(10).plot()
+print('La curva de contagios en las 10 ciudades con mas casos es: ')
+plt.show(contagiados_10_ciu)
+
+fallecidos_10_ciu = data[data['Recuperado'] == 'fallecido'].groupby('Ubicación del caso').size().sort_values(ascending = False).head(10).plot()
+print('La curva de fallecidos en las 10 ciudades con mas casos es: ')
+plt.show(fallecidos_10_ciu)
+
+recuperados_10_ciu = data[data['Recuperado'] == 'Recuperado'].groupby('Ubicación del caso').size().sort_values(ascending = False).head(10).plot()
+print('La curva de recuperados en las 10 ciudades con mas casos es: ')
+plt.show(recuperados_10_ciu)
