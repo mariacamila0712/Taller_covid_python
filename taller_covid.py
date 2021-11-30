@@ -232,3 +232,9 @@ fallecidos_edad = data[data['Recuperado'] == 'fallecido'].groupby('Edad').size()
 print(f'La cantidad de fallecidos por edad organizados de forma descendente es: {fallecidos_edad}')
 print('-----------------------------------------------------------------')
 
+# 31. Liste el porcentaje de personas por atención de toda Colombia
+porcentaje_atencion = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
+print(f'La lista de porcentajes por atencion en toda Colombia es: {porcentaje_atencion} ')
+print('-----------------------------------------------------------------')
+
+# 32.  Haga un gráfico de barras por atención de toda Colombia
